@@ -1,0 +1,173 @@
+page-service-details {
+  // Cover image
+  #profile-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: -16px;
+    height: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
+
+  .myContent{
+      margin-top:165px;
+
+  }
+
+  .item-ios-myGreen, .item-divider-ios-myGreen{
+      color: #000
+  }
+
+  .content-ios hr{
+      height: 1px;
+  }
+  .item-ios h2{
+      font-weight: 500;
+  }
+
+  ion-navbar{
+      .button{
+          background: transparent;
+          color:map-get($colors, myDark);
+      }
+  }
+
+  .circle{
+    margin:10px;
+    height:5%;
+    border-radius:100%;
+    border: 5px solid map-get($colors,myGreen);
+    background-color:transparent;
+    color:#000;
+    text-align:center;
+    font-size:14px;
+    overflow:hidden;
+}
+
+.circle.one-line{line-height:100px;}
+.circle.multi-line{
+    padding-top:22px;
+    height:125px;
+}
+
+// .myCircle{
+//     background: map-get($colors, light);
+//     border-radius:50%;
+//     width:50px;
+//     height:50px;
+//     text-align:center;
+//     font-size:14px;
+//     overflow:hidden;
+//     padding-top:15px;
+// }
+
+
+    .accordion-list {
+        background: transparent;
+        height: 100%;
+    }
+
+    .section {
+        background: map-get($colors, myGreen);
+        color: #000;
+    }
+
+    ion-label{
+        white-space: normal
+    }
+    .section-active {
+        background: map-get($colors, myGreen);
+        color: #fff;       
+    }
+
+    .child {
+        background: #e8e7e6;
+        color: #000;
+    }
+    
+    .label {
+        margin: 0px;
+    }
+
+    .button-large{
+        font-size: 1.5rem;
+    }
+
+    .resize-range{
+        width: 80%
+    }
+    .myGrey2{
+        background-color: map-get($colors, myGrey2);
+        margin-bottom:20px;
+    }
+
+    .button-options{
+        margin-bottom: 32px;
+    }
+
+    .item-datetime{
+        background-color:map-get($colors, myGreen);
+    }
+
+    .text-normal{
+        text-transform: none;
+    }
+
+    .myGrey2{
+        .item{
+            background-color: map-get($colors, myGrey2)
+        }
+    }
+
+    .list-header-ios{
+        letter-spacing: 0
+    }
+
+    .smaller{
+        font-size: 1.4rem;
+    }
+
+    .item-block{
+        min-height:auto
+    }
+
+    .vertical-align{
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+    }
+
+    .item-ios.item-block .item-inner{
+        padding-right: 0;
+    }
+
+    .myColl{
+        .item{
+            padding: 0 0 0 0;
+        }
+    }
+
+    .mainText{
+        font-size:1.8em;
+        color:map-get($colors, myGreen)
+    }
+
+    .minText{
+        font-size:1.1em;
+        color:map-get($colors, myGreen)
+    }
+
+    .item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner{
+        background: transparent
+    }
+
+    .datetime-text{
+        font-size:0.8em;
+    }
+    .hourText{
+
+    }
+}

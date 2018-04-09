@@ -1,0 +1,40 @@
+{
+    "descriptions":[
+        {
+            "title": "Pièce à vivre / Cuisine / WC / Salle de bain",
+            "title2": "Maison intégrale",
+            "possib":[
+                "Aération et dépoussiérage de toutes les pièces",
+                "Passage de l’aspirateur sur les tapis et moquettes",
+                "Passage de l’aspirateur et de la serpillère/ du balai à lingette imbibée sur les autres sols",
+                "Nettoyage et dégraissage de toutes les surfaces",
+                "Nettoyage de la vaisselle",
+                "Nettoyage de la salle de bain et des sanitaires",
+                "Retrait des déchets (intérieur)",
+                "Remise en place du lit",
+                "Nettoyage vapeur sols, meubles, vitres",
+                "Nettoyage plan de travail cuisine"
+            ]
+        },
+        {
+            "title": "Terrasse / balcon / jardin / piscine",
+            "possib": [
+                "Nettoyage et dégraissage de toutes les tables, et surfaces",
+                "Nettoyage de surface de la piscine",
+                "Nettoyage de surface de la pelouse",
+                "Retrait des déchets (extérieur)"
+            ]
+        },
+        {
+            "title":"Produits à fournir par le client",
+            "message": "Sinon cocher dans option(s)",
+            "possib": [
+                "Aspirateur, balai, serpillère",
+                "Lavette micro fibre, éponge",
+                "Nettoyant sanitaires, nettoyant multi usages",
+                "Produit dégraissant pour cuisine, produit à vitres",
+                "Fer et table à repasser"
+            ]
+        }
+    ]
+}

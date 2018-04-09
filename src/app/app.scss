@@ -1,0 +1,89 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.myGreen-alert{
+
+    button{
+        color: map-get($colors, myGreen) !important;
+    }
+    [aria-checked=true]{
+        .alert-checkbox-icon{
+            background-color: map-get($colors, myGreen) !important;
+        }
+    }
+    .alert-checkbox-icon{
+        border-color: map-get($colors, myGreen) !important;
+    }
+    .alert-checkbox-label{
+        white-space: normal;
+    }
+
+    [aria-checked=true] .alert-radio-label{
+        color: map-get($colors, myGreen) !important;
+    }
+
+    .alert-title{
+        color: map-get($colors, myGreen)
+    }
+
+    [aria-checked=true] .alert-radio-inner{
+        border-color: map-get($colors, myGreen) !important;
+    }
+}
+
+.picker-ios .picker-button, .picker-ios .picker-button.activated{
+    color: map-get($colors, myGreen) !important;
+}
+.content-sidemenu{
+    .scroll-content{
+        background: map-get($colors, myGreen);
+
+        .logo{
+            height: 200px;
+            margin: 50px 30px 0px 30px
+        }
+
+        .item{
+            background: map-get($colors, myGreen);
+            .item-inner{
+                background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%…><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%000000cc'/></svg>");
+            }
+        }
+
+        .item-block:first-child{
+            border-color: map-get($colors, myDark);
+        }
+
+        .item-block:last-child{
+            border-color: map-get($colors, myDark);
+        }
+
+        .item-block .item-inner{
+            border-color: map-get($colors, myDark);
+        }
+    }
+}
+
+.scroll-content{
+    background: map-get($colors, myGrey)
+}
+
+.header-img{
+    width: 80px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "JME MENAGE",
+  "app_id": "com.cyprienconnet.jmeMenage",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

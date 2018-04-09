@@ -1,0 +1,40 @@
+<ion-header color="myGreen">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Accueil</ion-title>
+    <ion-buttons end>
+      <button ion-button clear>
+        <img class="header-img" src="assets/img/testLogo.png">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="services" padding>
+  <div class="slogan">
+      <h2 text-center>Tu cliques et nous faisons le reste !</h2>
+  </div>
+  <ion-slides autoplay="5000" loop="true" speed="500" pager="true" class="service-slider">
+    
+    <ion-slide *ngFor="let service of services; let i = index" >
+      <div (click)="goToPage(i)">
+        <img [src]="service.imgSrc">
+        <div class="descriptif-service">
+          {{service.title}}
+        </div>
+      </div>
+    </ion-slide>
+<!--   
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide> -->
+  
+  </ion-slides>
+  <br>
+  <div text-center>
+    <button ion-button round outline color="myGreen" class="button-service-carte" (click)="ToServiceCartePage()">Service à la carte</button>
+  </div>
+
+</ion-content>

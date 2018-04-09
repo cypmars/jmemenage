@@ -1,0 +1,239 @@
+{
+    "services":[
+        {
+            "title":"Aprés Soirée",
+            "imgSrc":"assets/img/after-party.jpg",
+            "description":"Ne vous privez plus de chanter « Les lacs du connemara » à tue-tête, jusqu’au petit matin. Nous débarquons pour ne laisser aucune trace de la scène du crime.",
+            "formules":[
+                {
+                    "title": "Intérieur",
+                    "descriptionsId":[
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3]
+                        }
+                    ],
+                    "optionsId":[0, 1],
+                    "tarifH":25,
+                    "hPerSurfaceRange":[2, 3, 4]
+                    
+                },
+                {
+                    "title": "Extérieur",
+                    "descriptionsId": [
+                        {
+                            "id":1,
+                            "detailsId":[0,1,2,3]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3]
+                        }
+                    ],
+                    "optionsId":[0, 2],
+                    "tarifH":25,
+                    "hPerSurfaceRange":[2, 3, 4]
+                },
+                {
+                    "title": "Intérieur & Extérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6]
+                        },
+                        {
+                            "id":1,
+                            "detailsId":[0,1,2,3]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3]
+                        }
+                    ],
+                    "optionsId":[0, 1, 2],
+                    "tarifH": 37.5,
+                    "hPerSurfaceRange":[2, 3, 4]
+                }
+            ]
+        },
+        {
+            "title":"Ménage de printemps",
+            "imgSrc":"assets/img/printemps.jpg",
+            "description":"L’hiver laisse place aux premiers rayons de soleil et vous vous décidez enfin à vous lancer dans le grand ménage de printemps. C’est le grand marathon de tri, de lavage et de rangement. Et pour cela, la brigade J’me ménage vous accompagne, armé de son savoir-faire.",
+            "formules":[
+                {
+                    "title": "Intérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6,7,8]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0, 3, 4],
+                    "tarifH": 30,
+                    "hPerSurfaceRange":[2.5, 3.5, 4.5]
+                },
+                {
+                    "title": "Intérieur & Extérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6,7,8]
+                        },
+                        {
+                            "id":1,
+                            "detailsId":[0,1,2,3]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0, 3, 4],
+                    "tarifH": 45,
+                    "hPerSurfaceRange":[2.5, 3.5, 4.5]
+                }
+            ],
+            "avantage":"Repassage de votre linge"
+        },
+        {
+            "title":"Déménagement",
+            "imgSrc":"assets/img/demenagement.jpg",
+            "description":"Il l’heure de quitter votre ancien logement et laisser au nouveau propriétaire ou locataire un logement impeccable. Pour ce faire, vous désirez déménager sans passer par la case ménage par manque de temps ou manque d’énergie… J’ME MÉNAGE vient à votre secours.",
+            "formules":[
+                {
+                    "title": "Intérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6,8,9]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3]
+                        }
+                    ],
+                    "optionsId":[0, 5],
+                    "tarifH": 28.5,
+                    "hPerSurfaceRange":[2.5, 3.5, 4.5]
+                }
+            ],
+            "conditions":[
+                "Le logement doit être intégralement vide avant notre arrivée.",
+                "Si vous laissez un réfrigérateur ou congélateur dans le logement, pensez à bien les vider et à les dégivrer."
+            ]
+        },
+        {
+            "title":"Location",
+            "imgSrc":"assets/img/vacances.jpg",
+            "description":"Vous souhaitez louer votre logement, toutefois, le ménage devient vite un second métier et vous ne disposez pas du temps nécessaire pour sa réalisation. Nous intervenons entre deux locations pour faire peau neuve de votre logement.",
+            "formules":[
+                {
+                    "title": "Intérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6,7]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0, 1, 6],
+                    "tarifH": 27.5,
+                    "hPerSurfaceRange":[2.5, 3.5, 4.5]
+                },
+                {
+                    "title": "Intérieur & Extérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,3,4,5,6,7]
+                        },
+                        {
+                            "id":1,
+                            "detailsId":[0,1,2,3]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0, 1, 6],
+                    "tarifH": 40,
+                    "hPerSurfaceRange":[2.5, 3.5, 4.5]
+                }
+            ],
+            "avantage": "Repassage de votre linge (draps, serviettes…).",
+            "conditions":[
+                "Nous n’avons pas vocation à nous occuper de la location de la gestion des vacanciers."
+            ]
+        },
+        {
+            "title":"SOS Parents pas contents",
+            "imgSrc":"assets/img/parentspascontents.png",
+            "description":"Vous avez profité de l’absence de vos parents pour organiser une soirée sauf qu’à votre réveil, surprise, vous recevez un sms de leur part vous annonçant qu’ils sont décidés de rentrer plus tôt que prévu… Contactez-nous au minimum 2h avant leur arrivée et nous intervenons tel des commandos en mission.",
+            "formules":[
+                {
+                    "title": "Intérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,6]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0]
+                },
+                {
+                    "title": "Extérieur",
+                    "descriptionsId": [
+                        {
+                            "id":1,
+                            "detailsId":[0,1,2,3]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0]
+                },
+                {
+                    "title": "Intérieur & Extérieur",
+                    "descriptionsId": [
+                        {
+                            "id":0,
+                            "detailsId":[0,1,2,6]
+                        },
+                        {
+                            "id":1,
+                            "detailsId":[0,1,2,3]
+                        },
+                        {
+                            "id":2,
+                            "detailsId":[0,1,2,3,4]
+                        }
+                    ],
+                    "optionsId":[0]
+                }
+            ],
+            "avantage": "",
+            "conditions":[
+                ""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "options":[
+        {
+            "title":"Produits J'ME MÉNAGE bio",
+            "price":"4"
+        },
+        {
+            "title":"Nettoyage vapeur Sol & Vitres",
+            "price":"15"
+        },
+        {
+            "title":"Haute pression, passage machine",
+            "price":"15"
+        },
+        {
+            "title":"Rangement garage / cave < 30m²",
+            "price":"17"
+        },
+        {
+            "title":"Repassage",
+            "price":"5",
+            "perUnit": "kg"
+        },
+        {
+            "title":"Propreté balcon ou petite terrasse < 40m²",
+            "price":"15"
+        },
+        {
+            "title":"Repassage de la blanchisserie",
+            "price":"15"
+        }
+    ]
+}
