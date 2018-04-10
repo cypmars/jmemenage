@@ -52,18 +52,18 @@ export class MyApp {
   }
 
   openMentions(){
-    // const options: DocumentViewerOptions = {
-    //   title: 'Conditions Générales de prestation de services'
-    // }
+    const options: DocumentViewerOptions = {
+      title: 'Conditions Générales de prestation de services'
+    }
     
-    // this.documentViewer.viewDocument('assets/mentions.pdf', 'application/pdf', options)
+    this.documentViewer.viewDocument('assets/mentions.pdf', 'application/pdf', options)
   }
 
   openQuestions(){
-    // const options: DocumentViewerOptions = {
-    //   title: 'Questions Fréquentes'
-    // }
+    const options: DocumentViewerOptions = {
+      title: 'Questions Fréquentes'
+    }
     
-    // this.documentViewer.viewDocument('assets/questions.pdf', 'application/pdf', options)
+    this.documentViewer.viewDocument('assets/questions.pdf', 'application/pdf', options)
   }
 }

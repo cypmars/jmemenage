@@ -15,6 +15,7 @@ import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserTab } from '@ionic-native/browser-tab';
+import { DocumentViewer } from '@ionic-native/document-viewer'
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { BrowserTab } from '@ionic-native/browser-tab';
     StatusBar,
     SplashScreen,
     BrowserTab,
+    DocumentViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
