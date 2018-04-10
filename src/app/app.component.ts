@@ -6,11 +6,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AccueilPage } from '../pages/accueil/accueil';
 import { AProposPage } from '../pages/a-propos/a-propos';
 import { ContactPage } from '../pages/contact/contact';
-import { QuestionsPage } from '../pages/questions/questions';
 import { ServiceCartePage } from '../pages/service-carte/service-carte';
 import { ServicesPage } from '../pages/services/services';
-
 import { BrowserTab } from '@ionic-native/browser-tab';
+
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +22,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private browserTab: BrowserTab) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private browserTab: BrowserTab, private documentViewer: DocumentViewer) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -31,8 +31,7 @@ export class MyApp {
       { title: 'À Propos', component: AProposPage },
       { title: 'Nos Services', component: ServicesPage },
       { title: 'Service à la carte', component: ServiceCartePage },
-      { title: 'Nous contacter', component: ContactPage },
-      { title: 'Questions', component: QuestionsPage}
+      { title: 'Nous contacter', component: ContactPage }
     ];
 
   }
@@ -52,18 +51,19 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
-  navigateToMentions(){
-    this.browserTab.isAvailable()
-    .then((isAvailable: boolean) => {
-      if (isAvailable) {
-        this.browserTab.openUrl("https://martin-mariie.wixsite.com/jmemenage")
-      } else {
+  openMentions(){
+    // const options: DocumentViewerOptions = {
+    //   title: 'Conditions Générales de prestation de services'
+    // }
+    
+    // this.documentViewer.viewDocument('assets/mentions.pdf', 'application/pdf', options)
+  }
 
-        // open URL with InAppBrowser instead or SafariViewController
-
-      }
-
-    });
-
+  openQuestions(){
+    // const options: DocumentViewerOptions = {
+    //   title: 'Questions Fréquentes'
+    // }
+    
+    // this.documentViewer.viewDocument('assets/questions.pdf', 'application/pdf', options)
   }
 }

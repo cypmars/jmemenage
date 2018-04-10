@@ -24,7 +24,7 @@
     <div class="presentation" text-justify>
       <p>{{myService.description}}</p>
     </div>
-    <h2>Nos Formules</h2>
+    <h2 class="sacramento">Nos Formules</h2>
     <hr>
     <div class="formule">
       <ion-list class="accordion-list">
@@ -120,11 +120,12 @@
               </ion-list>
             </div>
             <div margin-top margin-left margin-right>
-              <div style="display: flow-root; margin-bottom:10px;">
+              <div style="margin-bottom:10px;">
                 <h2 class="text-normal" style="float: left">Votre surface ?</h2>
                 <ion-badge *ngIf="mySurfaces[indexFormule]" color="myGreen" class="text-normal" style="float:right">{{mySurfaces[indexFormule]}} m²</ion-badge>
               </div>
-              <hr>
+              <br>
+              <hr style="margin-top:10px">
               <ion-item>
                 <ion-range min="20" max="120" step="5" pin="true" [(ngModel)]="mySurfaces[indexFormule]" (ionChange)="onSurfaceChange(indexFormule)" color="myGreen">
                   <ion-icon range-left small color="myGreen" name="home"></ion-icon>
@@ -148,7 +149,7 @@
         </ion-list-header>
       </ion-list>
     </div>
-    <h2>Programmer une intervention</h2>
+    <h2 class="sacramento">Programmer une intervention</h2>
     <hr>
     <button no-lines ion-item text-left padding-top padding-bottom margin-bottom color="myGreen" (click)="showRadio()">
       Votre formule ?

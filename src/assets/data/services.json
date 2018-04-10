@@ -195,7 +195,9 @@
                             "detailsId":[0,1,2,3,4]
                         }
                     ],
-                    "optionsId":[0]
+                    "optionsId":[0],
+                    "tarifH": 21.5,
+                    "hPerSurfaceRange":[1.5, 2, 2.5]
                 },
                 {
                     "title": "Extérieur",
@@ -209,7 +211,9 @@
                             "detailsId":[0,1,2,3,4]
                         }
                     ],
-                    "optionsId":[0]
+                    "optionsId":[0],
+                    "tarifH": 21.5,
+                    "hPerSurfaceRange":[1.5, 2, 2.5]
                 },
                 {
                     "title": "Intérieur & Extérieur",
@@ -227,12 +231,10 @@
                             "detailsId":[0,1,2,3,4]
                         }
                     ],
-                    "optionsId":[0]
+                    "optionsId":[0],
+                    "tarifH": 32,
+                    "hPerSurfaceRange":[1.5, 2, 2.5]
                 }
-            ],
-            "avantage": "",
-            "conditions":[
-                ""
             ]
         }
     ]

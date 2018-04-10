@@ -98,7 +98,7 @@ export class ServiceDetailsPage {
             console.log("je suis la")
             this.now.setHours(this.now.getHours()+5)
           }
-          this.minDateString= moment(this.now.toDateString()).format('YYYY-MM-DDT07:00')
+          this.minDateString= moment(this.now.toDateString()).format('YYYY-MM-DDT07:00:00Z')
           console.log(this.minDateString)
         }
         else{
@@ -106,7 +106,7 @@ export class ServiceDetailsPage {
           if (this.now.getHours() >= 19){
             this.now.setHours(this.now.getHours()+5)
           }
-          this.minDateString = moment(this.now.toDateString()).format('YYYY-MM-DDT07:00')
+          this.minDateString = moment(this.now.toDateString()).format('YYYY-MM-DDT07:00:00Z')
         }
 
         for (let formule of this.myService.formules){
@@ -189,14 +189,15 @@ export class ServiceDetailsPage {
       cssClass:"myGreen-alert"
     });
 
-    for (let i in this.myService.formules)
-    alert.addInput({
-      type: 'radio',
-      label: this.myService.formules[i].title,
-      value: i,
-      checked: this.myService.formules[this.myChoice] == this.myService.formules[i]? true : false
-    });
-    alert.present();
+    for (let i in this.myService.formules){
+      alert.addInput({
+        type: 'radio',
+        label: this.myService.formules[i].title,
+        value: i,
+        checked: this.myService.formules[this.myChoice] == this.myService.formules[i]? true : false
+      });
+      alert.present();
+    }
 
   }
 

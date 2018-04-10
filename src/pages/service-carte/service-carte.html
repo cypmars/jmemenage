@@ -20,5 +20,36 @@
 
 
 <ion-content padding>
-
+  <div class="myContent">
+    <h2 class="sacramento">Service à la carte</h2>
+    <hr>
+    <p>Demandez un devis personnalisé ! <br>
+      <small>* Tous les champs sont obligatoires</small>
+    </p>
+    <ion-list>      
+      <ion-item>
+        <ion-label floating color="myGreen">Prénom NOM</ion-label>
+        <ion-input type="text" [(ngModel)]="fullname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="myGreen">Adresse</ion-label>
+        <ion-input type="text" [(ngModel)]="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="myGreen">E-mail</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="myGreen">Objet</ion-label>
+        <ion-input type="text" [(ngModel)]="object"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="myGreen">Demande de devis</ion-label>
+        <ion-textarea type="text" [(ngModel)]="description"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div text-center>
+      <button ion-button round outline color="myGreen" (click)="sendDemande()">Envoyer votre demande</button>
+    </div>
+  </div>
 </ion-content>
