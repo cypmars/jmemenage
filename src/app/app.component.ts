@@ -8,7 +8,6 @@ import { AProposPage } from '../pages/a-propos/a-propos';
 import { ContactPage } from '../pages/contact/contact';
 import { ServiceCartePage } from '../pages/service-carte/service-carte';
 import { ServicesPage } from '../pages/services/services';
-import { BrowserTab } from '@ionic-native/browser-tab';
 
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
 
@@ -22,7 +21,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private browserTab: BrowserTab, private documentViewer: DocumentViewer) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private documentViewer: DocumentViewer) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -52,18 +51,38 @@ export class MyApp {
   }
 
   openMentions(){
-    const options: DocumentViewerOptions = {
-      title: 'Conditions Générales de prestation de services'
+    if (this.platform.is('cordova')){
+      if (this.platform.is('ios')){
+        // Platform ios
+        const options: DocumentViewerOptions = {
+          title: 'Conditions Générales de prestation de services'
+        }
+        this.documentViewer.viewDocument('assets/pdf/mentions.pdf', 'application/pdf', options)
+      }
+      else{
+        // Platform android et WinPhone
+      }
     }
-    
-    this.documentViewer.viewDocument('assets/mentions.pdf', 'application/pdf', options)
+    else{
+      // Platform web
+    }
   }
 
   openQuestions(){
-    const options: DocumentViewerOptions = {
-      title: 'Questions Fréquentes'
+    if (this.platform.is('cordova')){
+      if (this.platform.is('ios')){
+        // Platform ios
+        const options: DocumentViewerOptions = {
+          title: 'Questions Fréquentes'
+        }
+        this.documentViewer.viewDocument('assets/pdf/questions.pdf', 'application/pdf', options)
+      }
+      else{
+        // Platform android, winPhone
+      }
     }
-    
-    this.documentViewer.viewDocument('assets/questions.pdf', 'application/pdf', options)
+    else{
+      // Platform web
+    }
   }
 }
