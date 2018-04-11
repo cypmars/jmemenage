@@ -171,7 +171,17 @@ page-service-details {
     .datetime-text{
         font-size:0.8em;
     }
-    .hourText{
 
-    }
+    #cart-btn {
+        position: relative;
+     }
+
+    #cart-badge {
+        position: absolute;
+        font-size: 0.6em;
+        top: 0px;
+        right: 0px;
+        width: 8px;
+        padding: 2.5px 10px 2.5px 5px;
+     }
 }

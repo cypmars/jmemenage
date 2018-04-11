@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { AccueilPage } from '../accueil/accueil'
 
 /**
  * Generated class for the ServiceCartePage page.
@@ -20,10 +21,12 @@ export class ServiceCartePage {
   public email;
   public object;
   public description;
+  public myCounter;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public toastCtrl: ToastController) {
+                this.myCounter = AccueilPage.notifCounter;
   }
 
   ionViewDidLoad() {

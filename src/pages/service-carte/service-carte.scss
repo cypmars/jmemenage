@@ -20,4 +20,17 @@ page-service-carte {
     .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
         border-bottom: 0;
     }
+
+    #cart-btn {
+        position: relative;
+     }
+
+    #cart-badge {
+        position: absolute;
+        font-size: 0.6em;
+        top: 0px;
+        right: 0px;
+        width: 8px;
+        padding: 2.5px 10px 2.5px 5px;
+     }
 }

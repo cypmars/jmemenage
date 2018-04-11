@@ -2,10 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Http } from '@angular/http'
-
+import { Storage } from '@ionic/storage';
 import moment from 'moment';
 
 import { ToastController } from 'ionic-angular';
+
+import { AccueilPage } from '../accueil/accueil'
 /**
  * Generated class for the ServiceDetailsPage page.
  *
@@ -42,11 +44,16 @@ export class ServiceDetailsPage {
   public minDateString: string;
   public now: Date;
   public nowstr: string
+
+  public myCounter
   constructor(public navCtrl: NavController, 
               public alertCtrl: AlertController, 
               public navParams: NavParams, 
               public http: Http,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,
+              public storage: Storage) {
+
+                this.myCounter = AccueilPage.notifCounter
 
     this.options = new Array();
     this.myOptions = new Array<Array<number>>();
@@ -239,6 +246,20 @@ export class ServiceDetailsPage {
                 position: 'bottom'
               })
               toast.present();
+              let order: Order;
+              let data = {
+                serviceId:AccueilPage.currentId,
+                formuleId:this.myChoice,
+                duration:this.myTimes[this.myChoice],
+                startDate:this.myDate,
+                optionsId:this.myOptions[this.myChoice],
+                surface:this.mySurfaces[this.myChoice],
+                kg:this.myQuantities? this.myQuantities: 0,
+              }
+
+              this.storage.set(AccueilPage.currentId.toString(), JSON.stringify(order))
+              AccueilPage.notifCounter ++;
+              // AccueilPage.obsNotifCounter.next(AccueilPage.notifCounter)
               this.navCtrl.pop();
               console.log("result: "+result)
             }
@@ -265,6 +286,7 @@ export class ServiceDetailsPage {
       toast.present()
     }
   }
+
   computePrice(indexFormule: number):number{
     let myPrice = 0;
     let mySurface = this.mySurfaces[indexFormule];
@@ -333,4 +355,32 @@ export class ServiceDetailsPage {
     console.log('ionViewDidLoad ServiceDetailsPage');
   }
 
+}
+
+export class Order{
+  public serviceId: number;
+  public formuleId: number;
+  public duration: number;
+  public startDate: Date;
+  public optionsId:Array<number>;
+  public surface: number;
+  public kg: number;
+
+  constructor(data){
+    this.serviceId = data.serviceId;
+    this.formuleId = data.formuleId;
+    this.duration = data.duration;
+    this.startDate = data.startDate;
+
+    if (data.optionsId){
+      for (let optionId of data.optionsId){
+        this.optionsId.push(optionId)
+      }
+    }
+
+    this.surface = data.surface;
+    if (data.kg){
+      this.kg = data.kg
+    }
+  }
 }

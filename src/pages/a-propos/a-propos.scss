@@ -15,4 +15,17 @@ page-a-propos {
         font-family: 'Sacramento', cursive;
         font-size: 2em;
     }
+
+    #cart-btn {
+        position: relative;
+     }
+
+    #cart-badge {
+        position: absolute;
+        font-size: 0.6em;
+        top: 0px;
+        right: 0px;
+        width: 8px;
+        padding: 2.5px 10px 2.5px 5px;
+     }
 }

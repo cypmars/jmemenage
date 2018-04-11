@@ -1,6 +1,8 @@
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { AccueilPage } from '../pages/accueil/accueil';
@@ -10,7 +12,7 @@ import { ServiceCartePage } from '../pages/service-carte/service-carte';
 import { ServiceDetailsPage } from '../pages/service-details/service-details';
 import { ServicesPage } from '../pages/services/services';
 
-import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +33,10 @@ import { DocumentViewer } from '@ionic-native/document-viewer'
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot({
+      name: 'jmenagedb',
+         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
