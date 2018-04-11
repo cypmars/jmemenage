@@ -16,9 +16,10 @@ import { PanierPage } from '../panier/panier';
   selector: 'page-accueil',
   templateUrl: 'accueil.html'
 })
+
+
 export class AccueilPage {
-
-
+  
   public services;
   public myCounter;
 

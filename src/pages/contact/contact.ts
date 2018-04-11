@@ -20,6 +20,7 @@ export class ContactPage {
   public email
   public message
   public myCounter
+  
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public toastCtrl: ToastController) {

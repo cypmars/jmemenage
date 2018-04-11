@@ -243,9 +243,11 @@ export class ServiceDetailsPage {
               let data = {
                 serviceId: this.serviceId,
                 formuleId: Number(this.myChoice),
+                creationDate: new Date(Date.now()),
                 duration: this.myTimes[this.myChoice],
                 startDate: new Date(this.myDate),
                 optionsId: this.myOptions[this.myChoice],
+                price: this.myPrices[this.myChoice],
                 surface: this.mySurfaces[this.myChoice],
                 kg: this.myQuantities && this.myQuantities[this.myChoice]? Number(this.myQuantities[this.myChoice]): 0,
               }
@@ -334,10 +336,6 @@ export class ServiceDetailsPage {
     console.log("formule: "+indexFormule+", prix:"+this.myPrices[indexFormule]+"€")
   }
 
-  onDateChange(){
-
-  }
-
   toggleSection(i) {
     this.myService.formules[i].open = !this.myService.formules[i].open;
     console.log(this.myService.formules[i].open)
@@ -360,24 +358,28 @@ export class ServiceDetailsPage {
 export class Order{
   public serviceId: number;
   public formuleId: number;
+  public creationDate: Date;
   public duration: number;
   public startDate: Date;
-  public optionsId:Array<number>;
+  public optionsId: Array<number>;
+  public price: number;
   public surface: number;
   public kg: number;
+  public open: boolean;
 
   constructor(data){
     this.serviceId = data.serviceId;
     this.formuleId = data.formuleId;
+    this.creationDate = new Date(data.creationDate);
     this.duration = data.duration;
     this.startDate = new Date(data.startDate);
-
+    this.price = data.price;
     if (data.optionsId){
       for (let optionId of data.optionsId){
         this.optionsId.push(optionId)
       }
     }
-
+    this.open = data.open? data.open : false;
     this.surface = data.surface;
     if (data.kg){
       this.kg = data.kg

@@ -21,6 +21,34 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding *ngIf="services && articles && articles.length > 0">
+  <h2 class="sacramento">Votre Panier</h2>
+  <hr>
+  <br>
+  <ion-list class="accordion-list">
+    <!-- First Level -->
+    <ion-list-header *ngFor="let article of this.articles; let index = index" no-lines no-padding>
+      <!-- Toggle Button -->
+      <button ion-item (click)="toggleSection(index)" detail-none [ngClass]="{'section-active': article.open, 'section': !article.open}">
+        <ion-icon item-left name="arrow-forward" *ngIf="!article.open"></ion-icon>
+        <ion-icon item-left name="arrow-down" *ngIf="article.open"></ion-icon>
+          {{services[article.serviceId].title}}
+        <div class="myCircle" style="font-size:0.8em;" item-right>
+            {{article.price}}€
+        </div>
+      </button>
 
+      <div *ngIf="article.open" text-justify padding class="myGrey2">
+        <div *ngIf="article" padding-top padding-right padding-left>
+          <h2 class="text-normal">Commande</h2>
+          <hr style="height: 1px;">
+        </div>
+        <p class="text-normal">Ajouté au panier le {{creationDateStr[index]}}</p>
+        <p class="text-normal">Formule: {{services[article.serviceId].formules[article.formuleId].title}}</p>
+        <p class="text-normal">Date d'arrivée sur les lieux: {{startDateStr[index]}}</p>
+        <p class="text-normal">Durée de l'intervention: {{durationStr[index]}}</p>
+      </div>
+
+    </ion-list-header>
+  </ion-list>
 </ion-content>

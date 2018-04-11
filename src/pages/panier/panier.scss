@@ -1,3 +1,35 @@
 page-panier {
+    .section {
+        background: map-get($colors, myGreen);
+        color: #000;
+    }
 
+    .sacramento{
+        font-family: 'Sacramento', cursive;
+        font-size: 2em;
+      }
+
+    ion-label{
+        white-space: normal
+    }
+
+    .text-normal{
+        text-transform: none;
+    }
+    
+    .section-active {
+        background: map-get($colors, myGreen);
+        color: #fff;       
+    }
+
+    .accordion-list {
+        background: transparent;
+        height: 100%;
+    }
+
+    .myGrey2{
+        .item{
+            background-color: map-get($colors, myGrey2)
+        }
+    }
 }
