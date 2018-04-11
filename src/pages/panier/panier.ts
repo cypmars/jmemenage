@@ -26,6 +26,8 @@ export class PanierPage {
     let articles: Array<Order>;
     console.log("ngOnInit PanierPage")
     console.log(AccueilPage.currentId)
+    AccueilPage.notifCounter = 0;
+    AccueilPage._data.next(AccueilPage.notifCounter)
     for (let j = 0; j < AccueilPage.currentId; j++){
       this.storage.get(j.toString()).then(
         (result)=>{

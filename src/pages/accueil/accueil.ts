@@ -7,8 +7,6 @@ import { ServiceDetailsPage } from '../service-details/service-details'
 
 import { Storage } from '@ionic/storage';
 
-import { Order } from '../service-details/service-details'
-
 import 'rxjs/add/operator/map'
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';

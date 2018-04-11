@@ -251,19 +251,16 @@ export class ServiceDetailsPage {
               
               this.storage.set(AccueilPage.currentId.toString(), data).then(
                 (success)=>{
-                  console.log(success)
+                  AccueilPage.currentId ++;
+                  AccueilPage.notifCounter ++;
+                  AccueilPage._data.next(AccueilPage.notifCounter)
+                  this.navCtrl.pop();
                 }
               ).catch(
                 (error)=>{
                   console.log(error)
                 }
               )
-
-              AccueilPage.currentId ++;
-              AccueilPage.notifCounter ++;
-              AccueilPage._data.next(AccueilPage.notifCounter)
-              // AccueilPage.obsNotifCounter.next(AccueilPage.notifCounter)
-              this.navCtrl.pop();
             }
           }],
           cssClass:"myGreen-alert"
