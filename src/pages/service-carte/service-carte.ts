@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil'
+import { PanierPage } from '../panier/panier';
 
 /**
  * Generated class for the ServiceCartePage page.
@@ -97,4 +98,7 @@ export class ServiceCartePage {
     }
   }
 
+  goToBasket(){
+    this.navCtrl.push(PanierPage)
+  }
 }

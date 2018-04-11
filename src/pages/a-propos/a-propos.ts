@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil'
+import { PanierPage } from '../panier/panier';
 
 /**
  * Generated class for the AProposPage page.
@@ -23,6 +24,10 @@ export class AProposPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AProposPage');
+  }
+
+  goToBasket(){
+    this.navCtrl.push(PanierPage)
   }
 
 }

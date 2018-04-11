@@ -5,7 +5,7 @@
     </button>
     <ion-title>Accueil</ion-title>
     <ion-buttons end>
-      <button id="cart-btn" ion-button clear>
+      <button id="cart-btn" (click)="goToBasket()" ion-button clear>
         <!-- <img class="header-img" src="assets/img/testLogo.png"> -->
         <ion-icon name="ios-cart-outline" style="font-size:2em;"></ion-icon>
         <ion-badge *ngIf="myCounter > 0" color="danger" id="cart-badge" text-center>{{myCounter}}</ion-badge>

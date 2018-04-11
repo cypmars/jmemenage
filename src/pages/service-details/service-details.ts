@@ -8,6 +8,7 @@ import moment from 'moment';
 import { ToastController } from 'ionic-angular';
 
 import { AccueilPage } from '../accueil/accueil'
+import { PanierPage } from '../panier/panier';
 /**
  * Generated class for the ServiceDetailsPage page.
  *
@@ -73,12 +74,6 @@ export class ServiceDetailsPage {
 
     this.now = new Date(Date.now());
     this.nowstr = moment(this.now.toDateString()).format('YYYY-MM-DD')
-
-    console.log(this.nowstr)
-    console.log("now: "+this.now)
-    console.log("day: "+this.now.getDay())
-    console.log("month: "+this.now.getMonth())
-    console.log("year: "+this.now.getFullYear())
 
     let optionsData = http.get("assets/data/options.json").map(res => res.json().options);
     optionsData.subscribe(
@@ -190,7 +185,6 @@ export class ServiceDetailsPage {
         cssClass: "alert-btn",
         handler : (result) => {
           this.myChoice = result
-          console.log("result: "+result)
         }
       }],
       cssClass:"myGreen-alert"
@@ -239,29 +233,37 @@ export class ServiceDetailsPage {
             text : "Confirmer",
             cssClass: "alert-btn",
             handler : (result) => {
-              this.myChoice = result
               let toast = this.toastCtrl.create({
                 message: "Votre rendez-vous a correctement été enregistré !",
                 duration: 3000,
                 position: 'bottom'
               })
               toast.present();
-              let order: Order;
               let data = {
-                serviceId:AccueilPage.currentId,
-                formuleId:this.myChoice,
-                duration:this.myTimes[this.myChoice],
-                startDate:this.myDate,
-                optionsId:this.myOptions[this.myChoice],
-                surface:this.mySurfaces[this.myChoice],
-                kg:this.myQuantities? this.myQuantities: 0,
+                serviceId: this.serviceId,
+                formuleId: Number(this.myChoice),
+                duration: this.myTimes[this.myChoice],
+                startDate: new Date(this.myDate),
+                optionsId: this.myOptions[this.myChoice],
+                surface: this.mySurfaces[this.myChoice],
+                kg: this.myQuantities && this.myQuantities[this.myChoice]? Number(this.myQuantities[this.myChoice]): 0,
               }
+              
+              this.storage.set(AccueilPage.currentId.toString(), data).then(
+                (success)=>{
+                  console.log(success)
+                }
+              ).catch(
+                (error)=>{
+                  console.log(error)
+                }
+              )
 
-              this.storage.set(AccueilPage.currentId.toString(), JSON.stringify(order))
+              AccueilPage.currentId ++;
               AccueilPage.notifCounter ++;
+              AccueilPage._data.next(AccueilPage.notifCounter)
               // AccueilPage.obsNotifCounter.next(AccueilPage.notifCounter)
               this.navCtrl.pop();
-              console.log("result: "+result)
             }
           }],
           cssClass:"myGreen-alert"
@@ -351,8 +353,8 @@ export class ServiceDetailsPage {
     this.navCtrl.pop();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ServiceDetailsPage');
+  goToBasket(){
+    this.navCtrl.push(PanierPage)
   }
 
 }
@@ -370,7 +372,7 @@ export class Order{
     this.serviceId = data.serviceId;
     this.formuleId = data.formuleId;
     this.duration = data.duration;
-    this.startDate = data.startDate;
+    this.startDate = new Date(data.startDate);
 
     if (data.optionsId){
       for (let optionId of data.optionsId){

@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AccueilPage } from '../accueil/accueil'
 import { ServiceDetailsPage } from '../service-details/service-details'
+import { PanierPage } from '../panier/panier';
 /**
  * Generated class for the ServicesPage page.
  *
@@ -30,6 +31,16 @@ export class ServicesPage {
     )
   }
 
+  ngOnInit(){
+    AccueilPage.obsNotifCounter.subscribe(
+      (counter)=>{
+        console.log("service.ts subscribe")
+        AccueilPage.notifCounter = counter;
+        this.myCounter = counter;
+      }
+    )
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ServicesPage');
   }
@@ -38,6 +49,10 @@ export class ServicesPage {
     this.navCtrl.push(ServiceDetailsPage, {
       serviceId: index
     })
+  }
+
+  goToBasket(){
+    this.navCtrl.push(PanierPage)
   }
 
 }

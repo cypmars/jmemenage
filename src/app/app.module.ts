@@ -11,13 +11,14 @@ import { ContactPage } from '../pages/contact/contact';
 import { ServiceCartePage } from '../pages/service-carte/service-carte';
 import { ServiceDetailsPage } from '../pages/service-details/service-details';
 import { ServicesPage } from '../pages/services/services';
-
+import { PanierPage } from '../pages/panier/panier'
 import { IonicStorageModule } from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserTab } from '@ionic-native/browser-tab';
 import { DocumentViewer } from '@ionic-native/document-viewer'
+
 
 @NgModule({
   declarations: [
@@ -27,16 +28,14 @@ import { DocumentViewer } from '@ionic-native/document-viewer'
     ContactPage,
     ServiceCartePage,
     ServiceDetailsPage,
-    ServicesPage
+    ServicesPage,
+    PanierPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot({
-      name: 'jmenagedb',
-         driverOrder: ['indexeddb', 'sqlite', 'websql']
-    })
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,13 +45,15 @@ import { DocumentViewer } from '@ionic-native/document-viewer'
     ContactPage,
     ServiceCartePage,
     ServiceDetailsPage,
-    ServicesPage
+    ServicesPage,
+    PanierPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BrowserTab,
     DocumentViewer,
+    Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
