@@ -17,8 +17,9 @@ import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserTab } from '@ionic-native/browser-tab';
-import { DocumentViewer } from '@ionic-native/document-viewer'
 
+import { DocumentViewer } from '@ionic-native/document-viewer'
+import { FileOpener } from '@ionic-native/file-opener'
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer'
     SplashScreen,
     BrowserTab,
     DocumentViewer,
+    FileOpener,
     Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

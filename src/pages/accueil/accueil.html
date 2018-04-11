@@ -18,7 +18,7 @@
   <div class="slogan">
       <h2 text-center>Tu cliques et nous faisons le reste !</h2>
   </div>
-  <ion-slides autoplay="5000" loop="true" speed="500" pager="true" class="service-slider">
+  <ion-slides *ngIf="services && services.length" autoplay="5000" loop="true" speed="500" pager="true" class="service-slider">
     
     <ion-slide *ngFor="let service of services; let i = index" >
       <div (click)="goToPage(i)">

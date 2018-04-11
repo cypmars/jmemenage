@@ -33,4 +33,18 @@ page-contact {
         width: 8px;
         padding: 2.5px 10px 2.5px 5px;
      }
+
+     .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+        border-bottom-color: map-get($colors, myGreen);
+        box-shadow: inset 0 -1px 0 0 map-get($colors, myGreen);
+    }
+
+    .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating] {
+        color: map-get($colors, myGreen)
+    }
+
+    .list-md .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child{
+        border-bottom-color: map-get($colors, myGreen);
+        box-shadow: inset 0 -1px 0 0 map-get($colors, myGreen);
+    }
 }

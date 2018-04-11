@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Http } from '@angular/http'
 import { Storage } from '@ionic/storage';
@@ -52,7 +52,8 @@ export class ServiceDetailsPage {
               public navParams: NavParams, 
               public http: Http,
               public toastCtrl: ToastController,
-              public storage: Storage) {
+              public storage: Storage,
+              public platform: Platform) {
 
                 this.myCounter = AccueilPage.notifCounter
 

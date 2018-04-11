@@ -17,7 +17,7 @@ page-service-details {
 
   }
 
-  .item-ios-myGreen, .item-divider-ios-myGreen{
+  .item-ios-myGreen, .item-divider-ios-myGreen, .item-md-myGreen, .item-divider-md-myGreen{
       color: #000
   }
 
@@ -74,6 +74,10 @@ page-service-details {
         height: 100%;
     }
 
+    .item-md{
+        background-color: map-get($colors, myGrey2)
+    }
+
     .section {
         background: map-get($colors, myGreen);
         color: #000;
@@ -82,6 +86,7 @@ page-service-details {
     ion-label{
         white-space: normal
     }
+
     .section-active {
         background: map-get($colors, myGreen);
         color: #fff;       
@@ -103,6 +108,11 @@ page-service-details {
     .resize-range{
         width: 80%
     }
+
+    // .item-md{
+    //     background-color: map-get($colors, myGrey2)
+    // }
+
     .myGrey2{
         background-color: map-get($colors, myGrey2);
         margin-bottom:20px;
@@ -170,6 +180,7 @@ page-service-details {
 
     .datetime-text{
         font-size:0.8em;
+        color: #000;
     }
 
     #cart-btn {
@@ -184,4 +195,9 @@ page-service-details {
         width: 8px;
         padding: 2.5px 10px 2.5px 5px;
      }
+
+     .item-datetime .label-md{
+         color: #000
+     }
+
 }

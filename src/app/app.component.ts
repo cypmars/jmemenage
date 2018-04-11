@@ -10,6 +10,7 @@ import { ServiceCartePage } from '../pages/service-carte/service-carte';
 import { ServicesPage } from '../pages/services/services';
 
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
+import { FileOpener } from '@ionic-native/file-opener'
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +22,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private documentViewer: DocumentViewer) {
+  constructor(public platform: Platform, 
+              public statusBar: StatusBar, 
+              public splashScreen: SplashScreen,
+              private documentViewer: DocumentViewer,
+              private fileOpener: FileOpener) {
+                
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -60,11 +66,13 @@ export class MyApp {
         this.documentViewer.viewDocument('assets/pdf/mentions.pdf', 'application/pdf', options)
       }
       else{
-        // Platform android et WinPhone
+        this.fileOpener.open('assets/pdf/mentions.pdf', 'application/pdf')
+        .then(() => console.log('File is opened'))
+        .catch(e => console.log('Error opening file', e))
       }
     }
     else{
-      // Platform web
+      window.open('assets/pdf/mentions.pdf', '_blank')
     }
   }
 
@@ -78,11 +86,13 @@ export class MyApp {
         this.documentViewer.viewDocument('assets/pdf/questions.pdf', 'application/pdf', options)
       }
       else{
-        // Platform android, winPhone
+        this.fileOpener.open('assets/pdf/questions.pdf', 'application/pdf')
+        .then(() => console.log('File is opened'))
+        .catch(e => console.log('Error opening file', e))
       }
     }
     else{
-      // Platform web
+      window.open('assets/pdf/questions.pdf', '_blank')
     }
   }
 }
